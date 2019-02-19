@@ -334,7 +334,7 @@ python_config <- function(python, required_module, python_versions, forced = NUL
     # (note that the LIBRARY variable has the name of the static library)
     python_libdir_config <- function(var) {
       python_libdir <- config[[var]]
-      ext <- switch(Sys.info()[["sysname"]], Darwin = ".dylib", Windows = ".dll", ".so")
+      ext <- switch(Sys.info()[["sysname"]], Darwin = ".dylib", Windows = ".dll", ".so.1.0")
       pattern <- paste0("^libpython", version, "m?", ext)
       libpython <- list.files(python_libdir, pattern = pattern, full.names = TRUE)
     }
